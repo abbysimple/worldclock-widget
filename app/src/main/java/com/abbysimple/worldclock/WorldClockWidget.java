@@ -6,13 +6,11 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.AlarmClock;
 import android.widget.RemoteViews;
 
 /**
  * The clocks are TextClocks (see layout/widget.xml), so the launcher keeps them ticking
- * itself; this provider only points them at the saved zones. Tapping opens the settings;
- * the Add alarm button opens the system clock's new-alarm screen.
+ * itself; this provider only points them at the saved zones. Tapping opens the settings.
  */
 public class WorldClockWidget extends AppWidgetProvider {
     private static final int[] MAIN_CLOCKS = {
@@ -51,11 +49,6 @@ public class WorldClockWidget extends AppWidgetProvider {
         Intent settings = new Intent(context, SettingsActivity.class)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         views.setOnClickPendingIntent(R.id.root, PendingIntent.getActivity(context, 0, settings,
-                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT));
-
-        Intent alarm = new Intent(AlarmClock.ACTION_SET_ALARM)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        views.setOnClickPendingIntent(R.id.add_alarm, PendingIntent.getActivity(context, 1, alarm,
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT));
         return views;
     }

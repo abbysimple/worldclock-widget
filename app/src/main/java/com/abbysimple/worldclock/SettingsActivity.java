@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.text.InputFilter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,8 @@ public class SettingsActivity extends Activity {
         }
 
         findViewById(R.id.add_zone).setOnClickListener(v -> pick(PICK_ROW));
+        findViewById(R.id.add_alarm).setOnClickListener(v ->
+                startActivity(new Intent(AlarmClock.ACTION_SET_ALARM)));
         findViewById(R.id.pin_widget).setOnClickListener(v -> pinWidget());
         render();
     }

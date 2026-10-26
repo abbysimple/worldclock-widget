@@ -62,6 +62,16 @@
             android:textColor="#1C1C1E" />
 
         <Button style="@style/ActionButton"
+            android:id="@+id/add_alarm"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_secondary"
+            android:drawableStart="@drawable/ic_alarm"
+            android:paddingStart="20dp"
+            android:paddingEnd="44dp"
+            android:text="Add alarm"
+            android:textColor="#FFFFFF" />
+
+        <Button style="@style/ActionButton"
             android:id="@+id/pin_widget"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_secondary"
