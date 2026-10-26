@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flip World Clock</string>
+    <string name="widget_name">Flip World Clock</string>
+    <string name="widget_description">Flip clock for your main time zone plus any world clocks you add</string>
+    <string name="add_manually">Long-press the home screen → Widgets → Flip World Clock</string>
+</resources>

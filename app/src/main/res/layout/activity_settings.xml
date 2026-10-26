@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E0E10"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView style="@style/SectionHeader"
+            android:text="Main clock (big flip cards)" />
+
+        <FrameLayout
+            android:id="@+id/main_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView style="@style/SectionHeader"
+            android:text="World clocks" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Tap a clock to rename, reorder or remove it."
+            android:textColor="#8E8E93"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/rows_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/empty_rows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No world clocks yet."
+            android:textColor="#8E8E93"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <Button style="@style/ActionButton"
+            android:id="@+id/add_zone"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_primary"
+            android:text="+  Add time zone"
+            android:textColor="#1C1C1E" />
+
+        <Button style="@style/ActionButton"
+            android:id="@+id/pin_widget"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_secondary"
+            android:text="Add widget to home screen"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

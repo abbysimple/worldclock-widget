@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sizes are in dp, not sp, so system font scaling can't break the card geometry. -->
+    <style name="FlipCard">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/flip_card</item>
+    </style>
+
+    <!-- Twice the card width; letterSpacing = (card width - digit advance) / text size,
+         with Roboto digits ~0.56em wide: (30 - 16.9) / 30 ≈ 0.44. -->
+    <style name="FlipDigit">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+        <item name="android:letterSpacing">0.44</item>
+        <item name="android:textColor">#1C1C1E</item>
+        <item name="android:textSize">30dp</item>
+    </style>
+
+    <style name="ColonDot">
+        <item name="android:layout_width">4dp</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:src">@drawable/colon_dot</item>
+    </style>
+
+    <style name="ZoneRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:background">@drawable/row_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <style name="ZoneLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ZoneCity">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">#E5E5EA</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="ZoneDay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:format12Hour">EEE</item>
+        <item name="android:format24Hour">EEE</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">#8E8E93</item>
+        <item name="android:textSize">9dp</item>
+    </style>
+
+    <style name="ZoneTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:format12Hour">hh:mm</item>
+        <item name="android:format24Hour">hh:mm</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">22dp</item>
+    </style>
+
+    <!-- Settings screen -->
+    <style name="SectionHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">28dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColor">#B3B3B8</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ZoneAmPm">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">1dp</item>
+        <item name="android:format12Hour">a</item>
+        <item name="android:format24Hour">a</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">9dp</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One extra-zone row; WorldClockWidget sets the label and the clocks' time zone. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ZoneRow">
+    <LinearLayout style="@style/ZoneLabel">
+        <TextView style="@style/ZoneCity"
+            android:id="@+id/row_label" />
+        <TextClock style="@style/ZoneDay"
+            android:id="@+id/row_day" />
+    </LinearLayout>
+    <TextClock style="@style/ZoneTime"
+        android:id="@+id/row_time" />
+    <TextClock style="@style/ZoneAmPm"
+        android:id="@+id/row_ampm" />
+</LinearLayout>

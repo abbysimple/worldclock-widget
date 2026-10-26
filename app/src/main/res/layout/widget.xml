@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 12-hour flip clock for the main zone, then one row per extra zone. Every clock is a
+     TextClock pinned to a time zone, so the launcher keeps it current with no code.
+     The zones written here are the defaults shown in the widget picker preview;
+     WorldClockWidget swaps in the saved ones. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/widget_bg"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Each card clips a two-digit TextClock to one half; letterSpacing in the
+             FlipDigit style centres each digit within its card-wide half. -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <FrameLayout style="@style/FlipCard">
+                <TextClock style="@style/FlipDigit"
+                    android:id="@+id/hour_tens"
+                    android:layout_gravity="start"
+                    android:format12Hour="hh"
+                    android:format24Hour="hh"
+                    android:timeZone="Asia/Manila" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/FlipCard"
+                android:layout_marginStart="3dp">
+                <TextClock style="@style/FlipDigit"
+                    android:id="@+id/hour_ones"
+                    android:layout_gravity="end"
+                    android:format12Hour="hh"
+                    android:format24Hour="hh"
+                    android:timeZone="Asia/Manila" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="14dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView style="@style/ColonDot" />
+                <ImageView style="@style/ColonDot"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <FrameLayout style="@style/FlipCard">
+                <TextClock style="@style/FlipDigit"
+                    android:id="@+id/minute_tens"
+                    android:layout_gravity="start"
+                    android:format12Hour="mm"
+                    android:format24Hour="mm"
+                    android:timeZone="Asia/Manila" />
+            </FrameLayout>
+
+            <FrameLayout style="@style/FlipCard"
+                android:layout_marginStart="3dp">
+                <TextClock style="@style/FlipDigit"
+                    android:id="@+id/minute_ones"
+                    android:layout_gravity="end"
+                    android:format12Hour="mm"
+                    android:format24Hour="mm"
+                    android:timeZone="Asia/Manila" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextClock
+            android:id="@+id/main_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:format12Hour="EEE, MMM d, yyyy, a"
+            android:format24Hour="EEE, MMM d, yyyy, a"
+            android:textColor="#B3B3B8"
+            android:textSize="11dp"
+            android:timeZone="Asia/Manila" />
+
+        <LinearLayout
+            android:id="@+id/rows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="2dp">
+
+            <LinearLayout style="@style/ZoneRow">
+                <LinearLayout style="@style/ZoneLabel">
+                    <TextView style="@style/ZoneCity"
+                        android:text="LAX" />
+                    <TextClock style="@style/ZoneDay"
+                        android:timeZone="America/Los_Angeles" />
+                </LinearLayout>
+                <TextClock style="@style/ZoneTime"
+                    android:timeZone="America/Los_Angeles" />
+                <TextClock style="@style/ZoneAmPm"
+                    android:timeZone="America/Los_Angeles" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/ZoneRow">
+                <LinearLayout style="@style/ZoneLabel">
+                    <TextView style="@style/ZoneCity"
+                        android:text="MNL" />
+                    <TextClock style="@style/ZoneDay"
+                        android:timeZone="Asia/Manila" />
+                </LinearLayout>
+                <TextClock style="@style/ZoneTime"
+                    android:timeZone="Asia/Manila" />
+                <TextClock style="@style/ZoneAmPm"
+                    android:timeZone="Asia/Manila" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
