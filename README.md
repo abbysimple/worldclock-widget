@@ -1,6 +1,6 @@
 # Flip World Clock
 
-An Android home-screen widget: a flip-card clock for your main time zone, with rows for any
+Free and open source ([MIT](LICENSE)). An Android home-screen widget: a flip-card clock for your main time zone, with rows for any
 other world clocks you add underneath. Made for keeping Manila time on the big cards with
 Los Angeles (work) time a glance away, but any city in the world works.
 
@@ -81,3 +81,7 @@ install it over this one. Uninstall the old app first.
 | `SettingsActivity.java` | Settings screen; also the widget's configure screen (setup and long-press → Settings) |
 | `ZonePickerActivity.java` | Searchable list of every city time zone |
 | `res/layout/widget.xml` | Widget layout. Each flip card clips a two-digit `TextClock` to one half, with letter spacing that centres each digit on its card |
+
+## License
+
+[MIT](LICENSE). Free to use, modify and share, including in your own apps.
